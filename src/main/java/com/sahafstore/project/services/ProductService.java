@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -100,6 +102,12 @@ public class ProductService {
     public List<Product> findProductsByPriceDesc(BigDecimal price) {
         List<Product> products = productRepository.findProductsByPriceDesc(price);
         Collections.sort(products,Collections.reverseOrder());
+        return products;
+    }
+
+    public List<Product> findProductsByPriceAsc(BigDecimal price) {
+        List<Product> products = productRepository.findProductsByPriceDesc(price);
+        products = products.stream().sorted().collect(Collectors.toList());
         return products;
     }
 }

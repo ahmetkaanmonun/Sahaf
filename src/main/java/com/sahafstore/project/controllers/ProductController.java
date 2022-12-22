@@ -82,8 +82,11 @@ public class ProductController {
         return productService.findProductsByPriceDesc(price);
     }
 
-
     // Sort products by price asc
+    @GetMapping("/products/sortByPriceAsc")
+    public List<Product> getProductsByPriceAsc(BigDecimal price){
+        return productService.findProductsByPriceAsc(price);
+    }
 
     // Sort products by publishedYear desc
 
