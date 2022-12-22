@@ -6,17 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/subcategories")
+@RequestMapping("/api/subcategories")
 public class SubCategoryController {
 
     @Autowired
     private SubCategoryService subCategoryService;
-
-    // Add a subcategory
-
-    // Delete a subcategory
-
-    // Update a subcategory
-
 
 }

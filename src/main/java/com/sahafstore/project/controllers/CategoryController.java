@@ -1,24 +1,35 @@
 package com.sahafstore.project.controllers;
 
+import com.sahafstore.project.dtos.CreateCategoryDTO;
+import com.sahafstore.project.dtos.UpdateCategoryDTO;
+import com.sahafstore.project.entities.Category;
 import com.sahafstore.project.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/categories")
 public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
 
-    // Add a category
-
-    // Delete a category
+    // Create a category
+    @PostMapping("/categories")
+    public Category createCategory(@RequestBody CreateCategoryDTO createCategoryDTO){
+        return categoryService.createCategory(createCategoryDTO);
+    }
 
     // Update a category
+    @PutMapping("/categories/{id}")
+    public Category updateCategory(@RequestBody UpdateCategoryDTO updateCategoryDto, @PathVariable Long id){
+        return categoryService.updateCategory(updateCategoryDto,id);
+    }
 
-    // List subcategories by category
+    // Delete a category
+    @DeleteMapping("/categories/{id}")
+    public void deleteCategory(@PathVariable Long id){
+        categoryService.deleteCategory(id);
+    }
 
 
 }

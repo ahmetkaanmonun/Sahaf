@@ -3,8 +3,10 @@ package com.sahafstore.project.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
-@Table(name = "SubCategories")
+@Table(name = "SUBCATEGORIES")
 @Data
 public class SubCategory {
 
@@ -16,8 +18,11 @@ public class SubCategory {
     @Column(name = "name")
     String name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "category_id")
-    private Category Category;
+    @ManyToOne
+    @JoinColumn(name="category_id", nullable=false)
+    private Category category;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "subCategory")
+    private List<Product> products;
 
 }
