@@ -31,5 +31,7 @@ public class SubCategoryController {
         subCategoryService.deleteSubCategory(id);
     }
 
+    // Get subcategories category
 
+    // Get products in subcategory
 }

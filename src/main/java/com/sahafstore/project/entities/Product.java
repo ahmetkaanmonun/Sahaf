@@ -3,6 +3,8 @@ package com.sahafstore.project.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Date;
+
 @Entity
 @Table(name = "PRODUCTS")
 @Data
@@ -48,6 +50,12 @@ public class Product {
 
     @Column(name = "description")
     String description;
+
+    @Column(name = "isbn")
+    String isbn;
+
+    @Column(name = "creationDate")
+    Date creationDate;
 
     @Column(name = "imageUrl")
     String imageUrl;

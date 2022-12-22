@@ -31,5 +31,8 @@ public class CategoryController {
         categoryService.deleteCategory(id);
     }
 
+    // Get all products in category
+
+    // Get all subcategories in category
 
 }
