@@ -5,6 +5,7 @@ import com.sahafstore.project.entities.Product;
 import com.sahafstore.project.entities.SubCategory;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
@@ -20,7 +21,7 @@ public class CreateProductDTO {
         String page;
         String status;
         String bookBinding;
-        String price;
+        BigDecimal price;
         String description;
         String isbn;
         Date creationDate;

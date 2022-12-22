@@ -8,6 +8,10 @@ import com.sahafstore.project.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 @RestController
@@ -35,18 +39,49 @@ public class ProductController {
     }
 
     // Get products by title
+    @GetMapping("/products/{title}")
+    public List<Product> getProductsByTitle(String title){
+        return productService.getProductsByTitle(title);
+    }
 
     // Get products by author
+    @GetMapping("/products/{author}")
+    public List<Product> getProductsByAuthor(String author){
+        return productService.getProductsByAuthor(author);
+    }
 
     // Get products by publisher
+    @GetMapping("/products/{publisher}")
+    public List<Product> getProductsByPublisher(String publisher){
+        return productService.getProductsByPublisher(publisher);
+    }
 
     // Get products by placeOfPublication
+    @GetMapping("/products/{placeOfPublication}")
+    public List<Product> getProductsByPlaceOfPublication(String placeOfPublication){
+        return productService.getProductsByPlaceOfPublication(placeOfPublication);
+    }
 
     // Get products by publishedYear
 
+    @GetMapping("/products/{publishedYear}")
+    public List<Product> getProductsByPublishedYear(String publishedYear){
+        return productService.getProductsByPublishedYear(publishedYear);
+    }
+
     // Get products by language
+    @GetMapping("/products/{language}")
+    public List<Product> getProductsByLanguage(String language){
+        return productService.getProductsByLanguage(language);
+
+    }
 
     // Sort products by price desc
+    @GetMapping("/products/sortByPriceDesc")
+    public List<Product> getProductsByPriceDesc(BigDecimal price){
+        return productService.findProductsByPriceDesc(price);
+    }
+
 
     // Sort products by price asc
 

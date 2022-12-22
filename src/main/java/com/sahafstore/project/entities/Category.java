@@ -15,10 +15,10 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
-    Long category_id;
+    private Long category_id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
     private List<Product> products;

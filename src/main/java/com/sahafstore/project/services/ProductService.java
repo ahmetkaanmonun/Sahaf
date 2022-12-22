@@ -7,6 +7,10 @@ import com.sahafstore.project.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.List;
+
 @Service
 public class ProductService {
 
@@ -62,5 +66,40 @@ public class ProductService {
 
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
+    }
+
+    public List<Product> getProductsByTitle(String title) {
+        return productRepository.findProductsByTitle(title);
+    }
+
+    public List<Product> getProductsByAuthor(String author) {
+        return productRepository.findProductsByAuthor(author);
+    }
+
+    public List<Product> getProductsByPublisher(String publisher) {
+        return productRepository.findProductsByPublisher(publisher);
+    }
+
+    public List<Product> getProductsByPlaceOfPublication(String placeOfPublication) {
+        return productRepository.findProductsByPlaceOfPublication(placeOfPublication);
+    }
+
+    public List<Product> getProductsByPublishedYear(String publishedYear) {
+        return productRepository.findProductsByPublishedYear(publishedYear);
+    }
+
+    public List<Product> getProductsByLanguage(String language) {
+        return productRepository.findProductsByLanguage(language);
+    }
+
+    public List<Product> getProductsByPriceDesc(BigDecimal price) {
+        return productRepository.findProductsByPriceDesc(price);
+
+    }
+
+    public List<Product> findProductsByPriceDesc(BigDecimal price) {
+        List<Product> products = productRepository.findProductsByPriceDesc(price);
+        Collections.sort(products,Collections.reverseOrder());
+        return products;
     }
 }

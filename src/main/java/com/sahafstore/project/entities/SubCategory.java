@@ -13,10 +13,10 @@ public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subCategory_id")
-    Long subCategory_id;
+    private Long subCategory_id;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)

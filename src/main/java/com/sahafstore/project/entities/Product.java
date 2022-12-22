@@ -3,6 +3,7 @@ package com.sahafstore.project.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
@@ -13,52 +14,52 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "title")
-    String title;
+    private String title;
 
     @Column(name = "author")
-    String author;
+    private String author;
 
     @Column(name = "publisher")
-    String publisher;
+    private String publisher;
 
     @Column(name = "placeOfPublication")
-    String placeOfPublication;
+    private String placeOfPublication;
 
     @Column(name = "publishedYear")
-    String publishedYear;
+    private String publishedYear;
 
     @Column(name = "language")
-    String language;
+    private String language;
 
     @Column(name = "size")
-    String size;
+    private String size;
 
     @Column(name = "page")
-    String page;
+    private String page;
 
     @Column(name = "status")
-    String status;
+    private String status;
 
     @Column(name = "bookBinding")
-    String bookBinding;
+    private String bookBinding;
 
     @Column(name = "price")
-    String price;
+    private BigDecimal price;
 
     @Column(name = "description")
-    String description;
+    private String description;
 
     @Column(name = "isbn")
-    String isbn;
+    private String isbn;
 
     @Column(name = "creationDate")
-    Date creationDate;
+    private Date creationDate;
 
     @Column(name = "imageUrl")
-    String imageUrl;
+    private String imageUrl;
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
