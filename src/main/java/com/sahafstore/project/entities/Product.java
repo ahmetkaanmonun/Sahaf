@@ -2,8 +2,6 @@ package com.sahafstore.project.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
@@ -47,7 +45,7 @@ public class Product {
     private String bookBinding;
 
     @Column(name = "price")
-    private BigDecimal price;
+    private double price;
 
     @Column(name = "description")
     private String description;
@@ -56,7 +54,7 @@ public class Product {
     private String isbn;
 
     @Column(name = "creationDate")
-    private Date creationDate;
+    private String creationDate;
 
     @Column(name = "imageUrl")
     private String imageUrl;

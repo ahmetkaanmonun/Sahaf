@@ -94,19 +94,14 @@ public class ProductService {
         return productRepository.findProductsByLanguage(language);
     }
 
-    public List<Product> getProductsByPriceDesc(BigDecimal price) {
-        return productRepository.findProductsByPriceDesc(price);
-
-    }
-
-    public List<Product> findProductsByPriceDesc(BigDecimal price) {
-        List<Product> products = productRepository.findProductsByPriceDesc(price);
+    public List<Product> getProductsByDescPrice(double price) {
+        List<Product> products = productRepository.findProductsByPrice(price);
         Collections.sort(products,Collections.reverseOrder());
         return products;
     }
 
-    public List<Product> findProductsByPriceAsc(BigDecimal price) {
-        List<Product> products = productRepository.findProductsByPriceDesc(price);
+    public List<Product> getProductsByAscPrice(double price) {
+        List<Product> products = productRepository.findProductsByPrice(price);
         products = products.stream().sorted().collect(Collectors.toList());
         return products;
     }

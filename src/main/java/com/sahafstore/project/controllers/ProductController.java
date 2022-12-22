@@ -7,10 +7,6 @@ import com.sahafstore.project.entities.Product;
 import com.sahafstore.project.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -78,14 +74,14 @@ public class ProductController {
 
     // Sort products by price desc
     @GetMapping("/products/sortByPriceDesc")
-    public List<Product> getProductsByPriceDesc(BigDecimal price){
-        return productService.findProductsByPriceDesc(price);
+    public List<Product> getProductsByDescPrice(double price){
+        return productService.getProductsByDescPrice(price);
     }
 
     // Sort products by price asc
     @GetMapping("/products/sortByPriceAsc")
-    public List<Product> getProductsByPriceAsc(BigDecimal price){
-        return productService.findProductsByPriceAsc(price);
+    public List<Product> getProductsByAscPrice(double price){
+        return productService.getProductsByAscPrice(price);
     }
 
     // Sort products by publishedYear desc

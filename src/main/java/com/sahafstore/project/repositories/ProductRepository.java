@@ -23,6 +23,5 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 
     List<Product> findProductsByLanguage(String language);
 
-    List<Product> findProductsByPriceDesc(BigDecimal price);
-
+    List<Product> findProductsByPrice(double price);
 }

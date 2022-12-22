@@ -21,10 +21,10 @@ public class CreateProductDTO {
         String page;
         String status;
         String bookBinding;
-        BigDecimal price;
+        double price;
         String description;
         String isbn;
-        Date creationDate;
+        String creationDate;
         String imageUrl;
         private Category category;
         private SubCategory subCategory;
