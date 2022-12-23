@@ -85,16 +85,40 @@ public class ProductController {
     }
 
     // Sort products by publishedYear desc
+    @GetMapping("/products/sortByPublishedYearDesc")
+    public List<Product> getProductsByDescPublishedYear(String publishedYear){
+        return productService.getProductsByDescPublishedYear(publishedYear);
+    }
 
     // Sort products by publishedYear asc
+    @GetMapping("/products/sortByPublishedYearAsc")
+    public List<Product> getProductsByAscPublishedYear(String publishedYear){
+        return productService.getProductsByAscPublishedYear(publishedYear);
+    }
 
     // Sort products by author A to Z
+    @GetMapping("/products/sortByAuthorAsc")
+    public List<Product> getProductsByAscAuthor(String author){
+        return productService.getProductsByAscAuthor(author);
+    }
 
     // Sort products by author Z to A
+    @GetMapping("/products/sortByAuthorDesc")
+    public List<Product> getProductsByDescAuthor(String author){
+        return productService.getProductsByDescAuthor(author);
+    }
 
     // Sort products by title A to Z
+    @GetMapping("/products/sortByTitleAsc")
+    public List<Product> getProductsByAscTitle(String title){
+        return productService.getProductsByAscTitle(title);
+    }
 
     // Sort products by title A to Z
+    @GetMapping("/products/sortByAuthorDesc")
+    public List<Product> getProductsByDescTitle(String title){
+        return productService.getProductsByDescTitle(title);
+    }
 
     // Sort products by isbn
 

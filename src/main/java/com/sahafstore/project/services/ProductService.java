@@ -105,4 +105,40 @@ public class ProductService {
         products = products.stream().sorted().collect(Collectors.toList());
         return products;
     }
+
+    public List<Product> getProductsByDescPublishedYear(String publishedYear) {
+        List<Product> products = productRepository.findProductsByPublishedYear(publishedYear);
+        Collections.sort(products,Collections.reverseOrder());
+        return products;
+    }
+
+    public List<Product> getProductsByAscPublishedYear(String publishedYear) {
+        List<Product> products = productRepository.findProductsByPublishedYear(publishedYear);
+        products = products.stream().sorted().collect(Collectors.toList());
+        return products;
+    }
+
+    public List<Product> getProductsByAscAuthor(String author) {
+        List<Product> products = productRepository.findProductsByAuthor(author);
+        products = products.stream().sorted().collect(Collectors.toList());
+        return products;
+    }
+
+    public List<Product> getProductsByDescAuthor(String author) {
+        List<Product> products = productRepository.findProductsByAuthor(author);
+        Collections.sort(products,Collections.reverseOrder());
+        return products;
+    }
+
+    public List<Product> getProductsByAscTitle(String title) {
+        List<Product> products = productRepository.findProductsByTitle(title);
+        products = products.stream().sorted().collect(Collectors.toList());
+        return products;
+    }
+
+    public List<Product> getProductsByDescTitle(String title) {
+        List<Product> products = productRepository.findProductsByTitle(title);
+        Collections.sort(products,Collections.reverseOrder());
+        return products;
+    }
 }
